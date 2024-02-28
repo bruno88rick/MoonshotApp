@@ -27,10 +27,10 @@ struct ContentView: View {
                 Button {
                     showingGridView.toggle()
                 } label: {
-                    if !showingGridView {
-                        Image(systemName: "square.grid.2x2")
-                    } else {
+                    if showingGridView {
                         Image(systemName: "list.bullet")
+                    } else {
+                        Image(systemName: "square.grid.2x2")
                     }
                 }
             }
