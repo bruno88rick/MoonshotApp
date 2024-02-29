@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ReturnDataForViews {
+class ReturnDataForViews {
     
     //all we’ve done is just moved code out of ContentView and into an extension (see Bundle-Decodable), but there’s nothing wrong with that – anything we can do to help our views stay small and focused is a good thing
     

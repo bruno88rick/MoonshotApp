@@ -15,14 +15,8 @@ struct ContentView: View {
         //verifying with the file was loaded correctly:
         //Text("Astronauts \(String(astronauts.count))")
         //Text("Missions \(String(missions.count))")
-        
         NavigationStack {
             MissionsGridView()
-                .navigationTitle("Moonshot")
-                .background(.darkBackground)
-                //telling SwiftUI our view prefers to be in dark mode always
-                .preferredColorScheme(.dark)
-            
             .toolbar {
                 Button {
                     showingGridView.toggle()

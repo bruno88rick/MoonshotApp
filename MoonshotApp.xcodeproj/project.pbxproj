@@ -23,6 +23,7 @@
 		B6C181B62B7FDFE900A9E143 /* Astronaut.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C181B52B7FDFE900A9E143 /* Astronaut.swift */; };
 		B6C181B82B7FE07A00A9E143 /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C181B72B7FE07A00A9E143 /* Bundle-Decodable.swift */; };
 		B6C181BA2B7FEED900A9E143 /* Mission.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C181B92B7FEED900A9E143 /* Mission.swift */; };
+		B6D10C892B90E6F900AD10AE /* MissionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D10C882B90E6F900AD10AE /* MissionListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		B6C181B52B7FDFE900A9E143 /* Astronaut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Astronaut.swift; sourceTree = "<group>"; };
 		B6C181B72B7FE07A00A9E143 /* Bundle-Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift"; sourceTree = "<group>"; };
 		B6C181B92B7FEED900A9E143 /* Mission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mission.swift; sourceTree = "<group>"; };
+		B6D10C882B90E6F900AD10AE /* MissionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 				B6C181A32B7FDC7F00A9E143 /* MoonshotAppApp.swift */,
 				B6C181A52B7FDC7F00A9E143 /* ContentView.swift */,
 				B68D09CD2B8F9C860009F4F5 /* MissionsGridView.swift */,
+				B6D10C882B90E6F900AD10AE /* MissionListView.swift */,
 				B68D09CB2B8F99AA0009F4F5 /* ReturnDataForViews.swift */,
 				B66BC09F2B8519F500E119C6 /* MissionView.swift */,
 				B68D09C92B8F95740009F4F5 /* MissionCrewView.swift */,
@@ -184,6 +187,7 @@
 				B680B0D82B834F1300947512 /* Color-Theme.swift in Sources */,
 				B68D09CE2B8F9C860009F4F5 /* MissionsGridView.swift in Sources */,
 				B6C181A62B7FDC7F00A9E143 /* ContentView.swift in Sources */,
+				B6D10C892B90E6F900AD10AE /* MissionListView.swift in Sources */,
 				B6C181A42B7FDC7F00A9E143 /* MoonshotAppApp.swift in Sources */,
 				B6C181BA2B7FEED900A9E143 /* Mission.swift in Sources */,
 				B6C181B82B7FE07A00A9E143 /* Bundle-Decodable.swift in Sources */,
