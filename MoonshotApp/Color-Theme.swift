@@ -7,6 +7,11 @@
 
 import SwiftUI
 
+enum viewType {
+    case grid
+    case list
+}
+
 //we want to add functionality to ShapeStyle, but only for times when it’s being used as a color
 extension ShapeStyle where Self == Color {
     static var darkBackground: Color {

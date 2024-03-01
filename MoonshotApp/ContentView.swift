@@ -16,15 +16,15 @@ struct ContentView: View {
         //Text("Astronauts \(String(astronauts.count))")
         //Text("Missions \(String(missions.count))")
         NavigationStack {
-            MissionsGridView()
+            MissionsListView(missionViewType: showingGridView ? viewType.grid : viewType.list)
             .toolbar {
                 Button {
                     showingGridView.toggle()
                 } label: {
                     if showingGridView {
-                        Image(systemName: "list.bullet")
+                        Label("Showing as Grid", systemImage: "list.dash")
                     } else {
-                        Image(systemName: "square.grid.2x2")
+                        Label("Showing as List", systemImage: "square.grid.2x2")
                     }
                 }
             }

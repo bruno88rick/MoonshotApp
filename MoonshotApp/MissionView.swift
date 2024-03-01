@@ -30,24 +30,31 @@ struct MissionView: View {
                     .containerRelativeFrame(.horizontal) { width, axis in
                         width * 0.6
                     }
-                    .padding(.top)
+                    .padding([.top, .bottom])
+                //showing the lunch date if the dates exists, using if let
+                if let date = mission.launchDate {
+                    //using LABEL!
+                    Label(date.formatted(date: .complete, time: .omitted), systemImage: "calendar")
+                        .padding(.bottom)
+                }
                 
                 HStack {
-                    Text("Launch Date: ")
-                        .font(.caption.bold())
-                        .foregroundStyle(.white)
-                    Text(mission.formattedLauchDate)
-                        .font(.caption)
-                        .foregroundStyle(.white)
+                    //other way to do:
+                    //Text("Launch Date: ")
+                    //  .font(.caption.bold())
+                    //.foregroundStyle(.white)
+                    //Text(mission.formattedLauchDate == "N/A" ? "Not Launched" : mission.formattedLauchDate)
+                    //  .font(.caption)
+                    // .foregroundStyle(.white)
                 }
                 .padding(.horizontal, 3)
                 
                 VStack(alignment: .leading) {
-
+                    
                     //built in Divider() or a custom one
                     //Divider()
                     RectangleDivider()
-
+                    
                     Text("Mission Highlights")
                         .font(.title.bold())
                         .padding(.bottom, 5)
@@ -62,37 +69,8 @@ struct MissionView: View {
                 }
                 .padding(.horizontal)
                 
-                //Bar indicator off: showsIndicators: false
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack {
-                        ForEach(crew, id: \.role) { crewMember in
-                            NavigationLink {
-                                AstronautView(astronaut: crewMember.astronaut)
-                            } label: {
-                                HStack {
-                                    Image(crewMember.astronaut.id)
-                                        .resizable()
-                                        .frame(width: 104, height: 72)
-                                        .clipShape(.capsule)
-                                        .overlay(
-                                            Capsule()
-                                                .strokeBorder(.white, lineWidth: 1)
-                                        )
-                                    
-                                    VStack(alignment: .leading) {
-                                        Text(crewMember.astronaut.name)
-                                            .foregroundStyle(.white)
-                                            .font(.headline)
-                                        Text(crewMember.role)
-                                            .foregroundStyle(.white.opacity(0.5))
-                                    }
-                                    .padding(.horizontal)
-                                }
-                                
-                            }
-                        }
-                    }
-                }
+                MissionCrewView(crew: crew)
+                
             }
             .padding(.bottom)
         }
