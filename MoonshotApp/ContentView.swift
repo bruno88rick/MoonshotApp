@@ -19,7 +19,9 @@ struct ContentView: View {
             MissionsListView(missionViewType: showingGridView ? viewType.grid : viewType.list)
             .toolbar {
                 Button {
-                    showingGridView.toggle()
+                    withAnimation(.linear(duration: 0.9)) {
+                        showingGridView.toggle()
+                    }
                 } label: {
                     if showingGridView {
                         Label("Showing as Grid", systemImage: "list.dash")
@@ -29,7 +31,6 @@ struct ContentView: View {
                 }
             }
         }
-        
     }
 }
 

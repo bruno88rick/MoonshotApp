@@ -119,5 +119,5 @@ struct MissionsListView: View {
 }
 
 #Preview {
-    MissionsListView(missionViewType: viewType.list)
+    MissionsListView(missionViewType: viewType.grid)
 }
