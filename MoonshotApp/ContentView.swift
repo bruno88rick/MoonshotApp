@@ -9,7 +9,9 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State private var showingGridView = true
+    //@State private var showingGridView = true
+    
+    @AppStorage("showingGrid") private var showingGridView = true
     
     var body: some View {
         //verifying with the file was loaded correctly:

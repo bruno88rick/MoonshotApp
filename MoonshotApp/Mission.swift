@@ -7,10 +7,10 @@
 
 import Foundation
 
-struct Mission: Codable, Identifiable {
+struct Mission: Codable, Identifiable, Hashable {
     
     //our CrewRole struct was made specifically to hold data about missions, and as a result we can actually put the CrewRole struct inside the Mission struct like this:
-    struct CrewRole: Codable {
+    struct CrewRole: Codable, Hashable {
         let name: String
         let role: String
     }

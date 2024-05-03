@@ -23,16 +23,14 @@ struct MissionsListView: View {
                 ScrollView {
                     LazyVGrid(columns: columns) {
                         ForEach(returnDataForView.missions) { mission in
-                            NavigationLink {
-                                MissionView(mission: mission, astronauts: returnDataForView.astronauts)
-                            } label: {
+                            //challange day 46:
+                            NavigationLink(value: mission) {
                                 VStack {
                                     Image(mission.image)
                                         .resizable()
                                         .scaledToFit()
                                         .frame(width: 100, height: 100)
                                         .padding()
-                                    
                                     VStack {
                                         Text(mission.displayName)
                                             .font(.headline)
@@ -61,6 +59,9 @@ struct MissionsListView: View {
                 .background(.darkBackground)
                 //telling SwiftUI our view prefers to be in dark mode always
                 .preferredColorScheme(.dark)
+                .navigationDestination(for: Mission.self) { mission in
+                    MissionView(mission: mission, astronauts: returnDataForView.astronauts)
+                }
             }
         } else {
             NavigationStack {
@@ -69,9 +70,7 @@ struct MissionsListView: View {
                         .ignoresSafeArea()
                     List {
                         ForEach(returnDataForView.missions) { mission in
-                            NavigationLink {
-                                MissionView(mission: mission, astronauts: returnDataForView.astronauts)
-                            } label: {
+                            NavigationLink(value: mission) {
                                 HStack {
                                     Image(mission.image)
                                         .resizable()
@@ -80,7 +79,6 @@ struct MissionsListView: View {
                                         .padding()
                                     
                                     VStack {
-                                        
                                         Text(mission.displayName)
                                             .font(.headline)
                                             .foregroundStyle(.white)
@@ -111,10 +109,13 @@ struct MissionsListView: View {
                     .listStyle(.plain)
                 }
                 .navigationTitle("Moonshot")
+                //telling SwiftUI our view prefers to be in dark mode always
                 .preferredColorScheme(.dark)
+                .navigationDestination(for: Mission.self) { mission in
+                    MissionView(mission: mission, astronauts: returnDataForView.astronauts)
+                }
             }
         }
-        //telling SwiftUI our view prefers to be in dark mode always
     }
 }
 
